@@ -16,6 +16,8 @@
 # next.js
 /.next/
 /out/
+.turbo/
+next-dev.log
 
 # production
 /build

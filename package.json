@@ -1,0 +1,10 @@
+{
+  "name": "fantasy-web",
+  "private": true,
+  "description": "Vercel/CI can run: npm run vercel-build (Next app is in ./web). Prefer setting Vercel Root Directory to web and using web/package.json per Next defaults.",
+  "scripts": {
+    "vercel-build": "cd web && npm install && npm run build",
+    "web:dev": "cd web && npm run dev",
+    "web:build": "cd web && npm run build"
+  }
+}
