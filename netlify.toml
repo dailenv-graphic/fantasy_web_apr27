@@ -1,7 +1,6 @@
 # https://docs.netlify.com/build/configure-builds/file-based-configuration
-# The Next app lives in ./web — Netlify must build from that folder.
+# Next.js app is at the repository root.
 [build]
-  base = "web"
   command = "npm run build"
 
 [build.environment]
