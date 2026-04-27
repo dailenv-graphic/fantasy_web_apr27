@@ -1,0 +1,15 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 451.7 475.52" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Img:mask" clip-path="url(#clip0_0_4)">
+<g id="circle.svg" clip-path="url(#clip1_0_4)">
+<path id="Vector" d="M225.85 463.61C350.584 463.61 451.7 362.494 451.7 237.76C451.7 113.026 350.584 11.91 225.85 11.91C101.116 11.91 0 113.026 0 237.76C0 362.494 101.116 463.61 225.85 463.61Z" fill="var(--fill-0, black)"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_4">
+<rect width="451.7" height="475.52" fill="white"/>
+</clipPath>
+<clipPath id="clip1_0_4">
+<rect width="451.7" height="451.7" fill="white" transform="translate(0 11.91)"/>
+</clipPath>
+</defs>
+</svg>
