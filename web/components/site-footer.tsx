@@ -5,7 +5,7 @@ const BOOK = "https://fantasyworldresort.com/";
 
 export function SiteFooter() {
   return (
-    <footer className="relative overflow-hidden bg-brand-green-dark text-white">
+    <footer className="relative min-w-0 overflow-x-clip bg-brand-green-dark text-white">
       <Image
         src="/image2.png"
         alt=""
@@ -18,10 +18,10 @@ export function SiteFooter() {
         <div className="pointer-events-none absolute left-0 right-0 top-0 h-[83px] overflow-hidden opacity-90">
           <Image src="/svg17.svg" alt="" width={2162} height={83} className="h-[83px] w-auto min-w-full max-w-none" />
         </div>
-        <div className="mx-auto max-w-[1362px] px-4 pb-16 pt-24 md:px-8">
-          <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
-            <div className="relative max-w-xl lg:pl-4">
-              <p className="text-right text-2xl font-semibold leading-tight md:text-3xl lg:text-4xl">
+        <div className="mx-auto max-w-[1362px] px-4 pb-12 pt-20 sm:px-6 sm:pb-16 sm:pt-24 md:px-8">
+          <div className="flex min-w-0 flex-col gap-8 sm:gap-10 lg:flex-row lg:items-start lg:justify-between">
+            <div className="relative max-w-xl min-w-0 text-center sm:text-left lg:pl-4">
+              <p className="text-balance text-xl font-semibold leading-tight sm:text-2xl md:text-3xl lg:text-4xl">
                 Start planning your trip with FantasyWorld Resort
               </p>
               <div className="pointer-events-none absolute -right-8 top-1/2 hidden w-40 -translate-y-1/2 md:block lg:-right-16 lg:w-48">
@@ -37,18 +37,18 @@ export function SiteFooter() {
                 <Image src="/logo-circle-png0.png" width={120} height={120} alt="" className="opacity-90" />
               </div>
             </div>
-            <div className="shrink-0">
+            <div className="flex shrink-0 justify-center sm:justify-start lg:justify-end">
               <Link
                 href={BOOK}
-                className="inline-flex items-center gap-2 rounded-full border-[3px] border-brand-orange bg-brand-orange px-8 py-4 text-sm font-bold uppercase text-white transition hover:bg-white hover:text-brand-green"
+                className="inline-flex min-h-12 w-full min-w-0 max-w-sm items-center justify-center gap-2 rounded-full border-[3px] border-brand-orange bg-brand-orange px-6 py-3.5 text-sm font-bold uppercase text-white transition hover:bg-white hover:text-brand-green sm:w-auto sm:px-8 sm:py-4"
               >
                 Book Now
-                <Image src="/svg18.svg" alt="" width={19} height={16} className="h-4 w-auto" />
+                <Image src="/svg18.svg" alt="" width={19} height={16} className="h-4 w-auto shrink-0" />
               </Link>
             </div>
           </div>
-          <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <div className="overflow-hidden rounded-[20px] border-[15px] border-brand-orange bg-brand-orange p-0">
+          <div className="mt-10 grid min-w-0 gap-6 sm:mt-14 sm:gap-8 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
+            <div className="min-w-0 overflow-hidden rounded-[20px] border-8 border-brand-orange bg-brand-orange p-0 sm:border-[12px] md:border-[15px]">
               <div className="overflow-hidden rounded-[20px] bg-white">
                 <div className="relative aspect-[16/10] w-full">
                   <Image src="/img-footer-map0.png" alt="Map" fill className="object-cover" sizes="(max-width:768px) 100vw, 33vw" />
@@ -59,17 +59,21 @@ export function SiteFooter() {
                 </div>
               </div>
             </div>
-            <div className="rounded-[20px] bg-brand-orange p-[15px]">
-              <div className="rounded-[20px] bg-white p-6 text-center">
+            <div className="min-w-0 rounded-[20px] bg-brand-orange p-3 sm:p-4 md:p-[15px]">
+              <div className="rounded-[20px] bg-white p-4 text-center sm:p-6">
                 <div className="mb-4 flex justify-center">
                   <Image src="/svg19.svg" alt="" width={50} height={50} />
                 </div>
-                <h3 className="text-[32px] font-bold tracking-[0.08em] text-brand-green">Contact Us</h3>
+                <h3 className="text-[clamp(1.5rem,3vw+0.5rem,2rem)] font-bold tracking-[0.08em] text-brand-green">
+                  Contact Us
+                </h3>
                 <p className="mt-4 text-base font-bold">Phone :</p>
                 <a href="tel:+14073968530" className="text-lg font-normal hover:underline">
                   (407) 396-8530
                 </a>
-                <h3 className="mt-8 text-[32px] font-bold tracking-[0.08em] text-brand-green">Drop A Line</h3>
+                <h3 className="mt-6 text-[clamp(1.5rem,3vw+0.5rem,2rem)] font-bold tracking-[0.08em] text-brand-green sm:mt-8">
+                  Drop A Line
+                </h3>
                 <p className="mt-3 text-base">
                   <span className="font-bold">Information :</span>
                   <br />
@@ -86,12 +90,12 @@ export function SiteFooter() {
                 </p>
               </div>
             </div>
-            <div className="flex flex-col items-center gap-6 text-center lg:items-end lg:text-right">
-              <div>
-                <h3 className="text-2xl font-bold">Rewards Program :</h3>
+            <div className="flex min-w-0 flex-col items-stretch gap-6 text-center sm:items-center lg:items-end lg:text-right">
+              <div className="min-w-0">
+                <h3 className="text-xl font-bold sm:text-2xl">Rewards Program :</h3>
                 <Link
                   href={BOOK}
-                  className="mt-4 inline-block rounded-full bg-brand-orange px-8 py-4 text-sm font-bold uppercase text-white transition hover:bg-white hover:text-brand-green"
+                  className="mt-4 inline-flex min-h-12 w-full min-w-0 max-w-md items-center justify-center rounded-full bg-brand-orange px-4 py-3.5 text-center text-xs font-bold uppercase leading-tight text-white transition hover:bg-white hover:text-brand-green sm:inline-flex sm:max-w-none sm:px-6 sm:py-4 sm:text-sm"
                 >
                   Click Here for More Information &amp; Great Benefits
                 </Link>
@@ -106,11 +110,13 @@ export function SiteFooter() {
             </div>
           </div>
         </div>
-        <div className="relative z-10 border-t border-white/20 px-4 py-6 text-center text-sm text-white/90">
-          Copyright © {new Date().getFullYear()} FantasyWorld Resort. All Rights Reserved. ·{" "}
-          <Link href={BOOK} className="font-semibold hover:underline">
-            Privacy Policy
-          </Link>
+        <div className="relative z-10 border-t border-white/20 px-3 py-5 text-center text-xs text-white/90 sm:px-4 sm:py-6 sm:text-sm">
+          <span className="inline-block max-w-prose [overflow-wrap:anywhere]">
+            Copyright © {new Date().getFullYear()} FantasyWorld Resort. All Rights Reserved. ·{" "}
+            <Link href={BOOK} className="font-semibold hover:underline">
+              Privacy Policy
+            </Link>
+          </span>
         </div>
       </div>
     </footer>

@@ -159,7 +159,7 @@ export function HeroBookingBar() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mt-6 w-full overflow-hidden rounded-[20px] border border-white/20 bg-white/56 px-1.5 py-5 shadow-[0_0_0_1px_rgba(0,0,0,0.15)] backdrop-blur-[43.9px]"
+      className="mt-4 w-full min-w-0 max-w-full overflow-hidden rounded-[20px] border border-white/20 bg-white/56 px-1 py-4 shadow-[0_0_0_1px_rgba(0,0,0,0.15)] backdrop-blur-[43.9px] sm:mt-6 sm:px-1.5 sm:py-5"
     >
       <div className="flex w-full min-w-0 flex-col divide-y divide-gray-200 md:flex-row md:divide-x md:divide-y-0 md:items-stretch">
         <FieldCell
@@ -292,13 +292,13 @@ export function HeroBookingBar() {
           />
         </FieldCell>
 
-        <div className="flex w-full min-w-0 items-center justify-end p-1.5 pl-0 pt-0 sm:p-1.5 md:w-auto md:shrink-0 md:pl-0">
+        <div className="flex w-full min-w-0 items-center justify-center p-1 pl-0 pt-0 min-[500px]:justify-end sm:p-1.5 md:w-auto md:shrink-0 md:pl-0">
           <button
             type="submit"
-            className="inline-flex w-fit min-h-12 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full border-2 border-brand-orange bg-brand-orange px-5 text-xs font-bold uppercase tracking-wide text-white shadow-sm transition hover:brightness-105 active:scale-[0.99] sm:px-6 sm:text-sm"
+            className="inline-flex w-full min-w-0 max-w-full min-h-12 shrink-0 items-center justify-center gap-1.5 hyphens-auto rounded-full border-2 border-brand-orange bg-brand-orange px-3 text-center text-[0.7rem] font-bold uppercase leading-tight tracking-wide text-white shadow-sm transition hover:brightness-105 active:scale-[0.99] min-[400px]:gap-2 min-[400px]:px-5 min-[400px]:text-xs min-[500px]:w-auto min-[500px]:whitespace-nowrap sm:px-6 sm:text-sm"
           >
-            <MIcon name="search" className="text-[1.25rem] !text-white" />
-            Check Availability
+            <MIcon name="search" className="shrink-0 text-[1.15rem] !text-white sm:text-[1.25rem]" />
+            <span>Check Availability</span>
           </button>
         </div>
       </div>

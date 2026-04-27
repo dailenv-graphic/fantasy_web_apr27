@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${robotoCondensed.variable}`}>
+    <html lang="en" className={`min-w-0 overflow-x-clip ${montserrat.variable} ${robotoCondensed.variable}`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -35,7 +35,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen bg-white text-black antialiased">{children}</body>
+      <body className="min-h-screen min-w-0 overflow-x-clip bg-white text-black antialiased">{children}</body>
     </html>
   );
 }

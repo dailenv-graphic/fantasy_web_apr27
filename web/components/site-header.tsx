@@ -20,9 +20,9 @@ type SiteHeaderProps = {
 
 export function SiteHeader({ activeItem }: SiteHeaderProps) {
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 flex justify-center px-3 pt-3 sm:px-5 sm:pt-4 md:pt-5">
-      <div className="mx-auto flex w-full max-w-[min(100%,90rem)] items-center justify-between gap-2 rounded-full bg-white py-2 pl-3 pr-2 shadow-md ring-1 ring-black/5 sm:pl-5 sm:pr-2 md:pl-6">
-        <Link href="/" className="shrink-0 pl-1">
+    <header className="fixed left-0 right-0 top-0 z-50 flex min-w-0 justify-center px-2 pt-2.5 sm:px-4 sm:pt-4 md:pt-5">
+      <div className="mx-auto flex w-full min-w-0 max-w-[min(100%,90rem)] items-center justify-between gap-1.5 rounded-full bg-white py-1.5 pl-2.5 pr-1.5 shadow-md ring-1 ring-black/5 sm:gap-2 sm:py-2 sm:pl-3 sm:pr-2 md:pl-6">
+        <Link href="/" className="min-w-0 shrink-0 pl-0.5 sm:pl-1">
           <Image
             src="/link-header-logo-png0.png"
             alt="FantasyWorld Resort"
@@ -51,10 +51,10 @@ export function SiteHeader({ activeItem }: SiteHeaderProps) {
           })}
         </nav>
         <details className="relative min-[1100px]:hidden">
-          <summary className="list-none rounded-full border border-black/10 px-2.5 py-2 text-[11px] font-bold uppercase text-brand-green marker:hidden sm:px-3 sm:text-xs [&::-webkit-details-marker]:hidden">
+          <summary className="list-none rounded-full border border-black/10 px-2 py-1.5 text-[10px] font-bold uppercase text-brand-green marker:hidden sm:px-3 sm:py-2 sm:text-xs [&::-webkit-details-marker]:hidden">
             Menu
           </summary>
-          <div className="absolute right-0 top-full z-50 mt-2 w-52 rounded-xl border border-black/10 bg-white py-2 shadow-xl">
+          <div className="absolute right-0 top-full z-50 mt-2 w-[min(18rem,calc(100vw-1.5rem))] max-w-[20rem] rounded-xl border border-black/10 bg-white py-2 shadow-xl">
             {nav.map((label) => {
               const active = activeItem && label === activeItem;
               return (

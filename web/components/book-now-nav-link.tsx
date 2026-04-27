@@ -8,7 +8,7 @@ import { useCallback, useEffect, useState, type MouseEvent } from "react";
 const BOOKING_BAR_HREF = "/#hero-booking-bar";
 
 const BASE_CLASS =
-  "flex shrink-0 items-center gap-2 rounded-full border-[3px] border-brand-orange bg-brand-orange px-4 py-2.5 text-xs font-bold uppercase text-white transition hover:brightness-110 sm:px-6 sm:py-3 sm:text-sm";
+  "flex min-w-0 shrink-0 items-center gap-1.5 rounded-full border-[3px] border-brand-orange bg-brand-orange px-2.5 py-2 text-[0.65rem] font-bold uppercase leading-tight text-white transition hover:brightness-110 min-[400px]:gap-2 min-[400px]:px-3.5 min-[400px]:text-xs sm:px-6 sm:py-3 sm:text-sm";
 
 /** Hides the nav CTA when the in-page booking/search bar is in the viewport. */
 export function BookNowNavLink() {
