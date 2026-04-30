@@ -29,7 +29,7 @@ function formatDate(ymd: string) {
 }
 
 const selectClass =
-  "w-full cursor-pointer appearance-none border-0 bg-transparent py-0.5 pl-0 pr-7 text-sm font-semibold text-gray-800 outline-none focus:ring-0";
+  "w-full min-w-0 cursor-pointer appearance-none border-0 bg-transparent py-0.5 pl-0 pr-7 text-xs font-semibold text-gray-800 outline-none focus:ring-0 sm:text-sm";
 
 function DateField({
   name,
@@ -72,7 +72,8 @@ function DateField({
             el?.click();
           }
         }}
-        className="w-full min-w-0 text-left text-sm font-semibold text-gray-800 transition hover:text-gray-900"
+        title={formatDate(value)}
+        className="block w-full min-w-0 truncate text-left text-xs font-semibold text-gray-800 transition hover:text-gray-900 sm:text-sm"
       >
         {formatDate(value)}
       </button>
@@ -97,7 +98,7 @@ function FieldCell({
 }) {
   return (
     <div
-      className={`group flex min-h-[3.5rem] w-full min-w-0 flex-1 basis-0 items-center gap-2.5 px-3 py-2 sm:gap-3 sm:px-3.5 sm:py-2.5 ${className}`}
+      className={`group flex min-h-[3.25rem] w-full min-w-0 items-center gap-2 px-2.5 py-2 sm:min-h-[3.5rem] sm:gap-3 sm:px-3.5 sm:py-2.5 ${className}`}
     >
       <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gray-100 text-gray-500 transition group-hover:bg-gray-200/90">
         <MIcon name={icon} className="text-[1.2rem] leading-none md:text-[1.35rem]" />
@@ -115,7 +116,7 @@ function FieldCell({
         ) : (
           <p className="text-[10px] font-medium uppercase tracking-wider text-gray-400 sm:text-xs">{label}</p>
         )}
-        <div className="min-w-0 pt-0.5 text-sm">{children}</div>
+        <div className="min-w-0 pt-0.5 text-xs sm:text-sm">{children}</div>
       </div>
     </div>
   );
@@ -159,14 +160,13 @@ export function HeroBookingBar() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mt-4 w-full min-w-0 max-w-full overflow-hidden rounded-[20px] border border-white/20 bg-white/56 px-1 py-4 shadow-[0_0_0_1px_rgba(0,0,0,0.15)] backdrop-blur-[43.9px] sm:mt-6 sm:px-1.5 sm:py-5"
+      className="mt-4 w-full min-w-0 max-w-full overflow-hidden rounded-[20px] border border-white/20 bg-white/56 px-2 py-3 shadow-[0_0_0_1px_rgba(0,0,0,0.15)] backdrop-blur-[43.9px] sm:mt-6 sm:px-2 sm:py-4 md:px-3 md:py-5"
     >
-      <div className="flex w-full min-w-0 flex-col divide-y divide-gray-200 md:flex-row md:divide-x md:divide-y-0 md:items-stretch">
+      <div className="grid w-full min-w-0 grid-cols-2 gap-px overflow-hidden rounded-[14px] bg-gray-200/70 xl:grid-cols-[repeat(6,minmax(0,1fr))_auto] xl:items-stretch">
         <FieldCell
           icon="calendar_today"
           label="Arrival"
           labelFor={`${id}-arr-btn`}
-          className="md:border-r-0"
           labelClassName={fieldLabelOrange}
         >
           <DateField
@@ -276,7 +276,6 @@ export function HeroBookingBar() {
         <FieldCell
           icon="sell"
           label="Promo"
-          className="md:border-r-0"
           labelFor={`${id}-promo`}
           labelClassName={fieldLabelOrange}
         >
@@ -287,15 +286,15 @@ export function HeroBookingBar() {
             onChange={(e) => setPromo(e.target.value)}
             type="text"
             placeholder="Promo code"
-            className="w-full border-0 bg-transparent p-0 text-sm font-medium text-gray-800 placeholder:font-normal placeholder:text-gray-400 focus:ring-0"
+            className="w-full min-w-0 border-0 bg-transparent p-0 text-xs font-medium text-gray-800 placeholder:font-normal placeholder:text-gray-400 focus:ring-0 sm:text-sm"
             autoComplete="off"
           />
         </FieldCell>
 
-        <div className="flex w-full min-w-0 items-center justify-center p-1 pl-0 pt-0 min-[500px]:justify-end sm:p-1.5 md:w-auto md:shrink-0 md:pl-0">
+        <div className="col-span-2 flex w-full min-w-0 items-center justify-center p-2 sm:p-2.5 xl:col-span-1 xl:px-3 xl:py-2">
           <button
             type="submit"
-            className="inline-flex w-full min-w-0 max-w-full min-h-12 shrink-0 items-center justify-center gap-1.5 hyphens-auto rounded-full border-2 border-brand-orange bg-brand-orange px-3 text-center text-[0.7rem] font-bold uppercase leading-tight tracking-wide text-white shadow-sm transition hover:brightness-105 active:scale-[0.99] min-[400px]:gap-2 min-[400px]:px-5 min-[400px]:text-xs min-[500px]:w-auto min-[500px]:whitespace-nowrap sm:px-6 sm:text-sm"
+            className="inline-flex w-full min-w-0 max-w-full min-h-11 shrink-0 items-center justify-center gap-1.5 hyphens-auto rounded-full border-2 border-brand-orange bg-brand-orange px-3 text-center text-[0.65rem] font-bold uppercase leading-tight tracking-wide text-white shadow-sm transition hover:brightness-105 active:scale-[0.99] min-[380px]:min-h-12 min-[380px]:gap-2 min-[380px]:px-4 min-[380px]:text-[0.7rem] sm:px-6 sm:text-sm xl:whitespace-nowrap"
           >
             <MIcon name="search" className="shrink-0 text-[1.15rem] !text-white sm:text-[1.25rem]" />
             <span>Check Availability</span>
