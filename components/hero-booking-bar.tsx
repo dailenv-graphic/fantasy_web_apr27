@@ -31,6 +31,9 @@ function formatDate(ymd: string) {
 const selectClass =
   "w-full min-w-0 cursor-pointer appearance-none border-0 bg-transparent py-0.5 pl-0 pr-7 text-xs font-semibold text-gray-800 outline-none focus:ring-0 sm:text-sm";
 
+const selectChevronClass =
+  "pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-[1.1rem] text-gray-400 transition-colors group-hover:text-brand-orange";
+
 function DateField({
   name,
   inputId,
@@ -98,9 +101,9 @@ function FieldCell({
 }) {
   return (
     <div
-      className={`group flex min-h-[3.25rem] w-full min-w-0 items-center gap-2 px-2.5 py-2 sm:min-h-[3.5rem] sm:gap-3 sm:px-3.5 sm:py-2.5 ${className}`}
+      className={`group flex min-h-[3.25rem] w-full min-w-0 items-center gap-2 bg-transparent px-2.5 py-2 sm:min-h-[3.5rem] sm:gap-3 sm:px-3.5 sm:py-2.5 ${className}`}
     >
-      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gray-100 text-gray-500 transition group-hover:bg-gray-200/90">
+      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gray-100 text-gray-500 transition-colors group-hover:bg-brand-orange group-hover:text-white">
         <MIcon name={icon} className="text-[1.2rem] leading-none md:text-[1.35rem]" />
       </span>
       <div className="min-w-0 flex-1 text-left">
@@ -160,9 +163,9 @@ export function HeroBookingBar() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mt-4 w-full min-w-0 max-w-full overflow-hidden rounded-[20px] border border-white/20 bg-white/56 px-2 py-3 shadow-[0_0_0_1px_rgba(0,0,0,0.15)] backdrop-blur-[43.9px] sm:mt-6 sm:px-2 sm:py-4 md:px-3 md:py-5"
+      className="mt-4 w-full min-w-0 max-w-full overflow-hidden rounded-[20px] border border-white/20 bg-white/80 px-2 py-3 shadow-[0_0_0_1px_rgba(0,0,0,0.15)] backdrop-blur-[43.9px] sm:mt-6 sm:px-2 sm:py-4 md:px-3 md:py-3"
     >
-      <div className="grid w-full min-w-0 grid-cols-2 gap-px overflow-hidden rounded-[14px] bg-gray-200/70 xl:grid-cols-[repeat(6,minmax(0,1fr))_auto] xl:items-stretch">
+      <div className="grid w-full min-w-0 grid-cols-2 gap-px overflow-hidden rounded-[14px] bg-transparent xl:grid-cols-[repeat(6,minmax(0,1fr))_auto] xl:items-stretch">
         <FieldCell
           icon="calendar_today"
           label="Arrival"
@@ -214,10 +217,7 @@ export function HeroBookingBar() {
                 </option>
               ))}
             </select>
-            <MIcon
-              name="expand_more"
-              className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-[1.1rem] text-gray-400"
-            />
+            <MIcon name="expand_more" className={selectChevronClass} />
           </div>
         </FieldCell>
 
@@ -241,10 +241,7 @@ export function HeroBookingBar() {
                 </option>
               ))}
             </select>
-            <MIcon
-              name="expand_more"
-              className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-[1.1rem] text-gray-400"
-            />
+            <MIcon name="expand_more" className={selectChevronClass} />
           </div>
         </FieldCell>
 
@@ -266,10 +263,7 @@ export function HeroBookingBar() {
               <option value="1">1</option>
               <option value="2">2</option>
             </select>
-            <MIcon
-              name="expand_more"
-              className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-[1.1rem] text-gray-400"
-            />
+            <MIcon name="expand_more" className={selectChevronClass} />
           </div>
         </FieldCell>
 
