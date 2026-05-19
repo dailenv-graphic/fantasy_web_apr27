@@ -2,7 +2,7 @@ import { BookNowNavLink } from "@/components/book-now-nav-link";
 import Image from "next/image";
 import Link from "next/link";
 
-const BOOK = "https://fantasyworldresort.com/";
+import { HOME_HREF } from "@/lib/site-links";
 
 const nav = [
   "Home",
@@ -20,7 +20,7 @@ type SiteHeaderProps = {
 
 export function SiteHeader({ activeItem }: SiteHeaderProps) {
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 flex min-w-0 justify-center px-2 pt-2.5 sm:px-4 sm:pt-4 md:pt-5">
+    <header className="sticky top-0 z-50 flex min-w-0 justify-center px-2 pt-2.5 sm:px-4 sm:pt-4 md:pt-5">
       <div className="mx-auto flex w-full min-w-0 max-w-[min(100%,90rem)] items-center justify-between gap-1.5 rounded-full bg-white py-1.5 pl-2.5 pr-1.5 shadow-md ring-1 ring-black/5 sm:gap-2 sm:py-2 sm:pl-3 sm:pr-2 md:pl-6">
         <Link href="/" className="min-w-0 shrink-0 pl-0.5 sm:pl-1">
           <Image
@@ -38,7 +38,7 @@ export function SiteHeader({ activeItem }: SiteHeaderProps) {
             return (
               <Link
                 key={label}
-                href={BOOK}
+                href={HOME_HREF}
                 className={
                   active
                     ? "border-b-[3px] border-brand-orange pb-0.5 text-brand-green"
@@ -60,7 +60,7 @@ export function SiteHeader({ activeItem }: SiteHeaderProps) {
               return (
                 <Link
                   key={label}
-                  href={BOOK}
+                  href={HOME_HREF}
                   className={`block px-4 py-2.5 text-sm font-semibold uppercase ${
                     active ? "text-brand-green" : "text-[#666666]"
                   } hover:bg-black/5`}

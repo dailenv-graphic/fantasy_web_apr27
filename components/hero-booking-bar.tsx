@@ -1,8 +1,8 @@
 "use client";
 
-import { useId, useMemo, useRef, useState } from "react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
 
-const BOOK = "https://fantasyworldresort.com/";
+import { BOOKING_BAR_HREF } from "@/lib/site-links";
 
 /** Matches "Arrival" / brand accent for booking field labels (placeholder text stays `text-gray-400`). */
 const fieldLabelOrange = "text-[rgba(215,121,15,1)]";
@@ -134,6 +134,11 @@ export function HeroBookingBar() {
   const [dogs, setDogs] = useState("1");
   const [promo, setPromo] = useState("");
 
+  useEffect(() => {
+    const fromUrl = new URLSearchParams(window.location.search).get("promo");
+    if (fromUrl) setPromo(fromUrl);
+  }, []);
+
   const minDeparture = useMemo(() => {
     if (!arrival) return undefined;
     const t = new Date(`${arrival}T12:00:00`);
@@ -150,14 +155,16 @@ export function HeroBookingBar() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const u = new URL(BOOK, window.location.origin);
-    u.searchParams.set("arrival", arrival);
-    u.searchParams.set("departure", departure);
-    u.searchParams.set("adults", adults);
-    u.searchParams.set("children", children);
-    u.searchParams.set("dogs", dogs);
-    if (promo.trim()) u.searchParams.set("promo", promo.trim());
-    window.open(u.toString(), "_blank", "noopener,noreferrer");
+    const params = new URLSearchParams({
+      arrival,
+      departure,
+      adults,
+      children,
+      dogs,
+    });
+    if (promo.trim()) params.set("promo", promo.trim());
+    const query = params.toString();
+    window.location.href = query ? `/?${query}#hero-booking-bar` : BOOKING_BAR_HREF;
   };
 
   return (

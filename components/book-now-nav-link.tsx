@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState, type MouseEvent } from "react";
 
-const BOOKING_BAR_HREF = "/#hero-booking-bar";
+import { BOOKING_BAR_HREF } from "@/lib/site-links";
 
 const BASE_CLASS =
   "flex min-w-0 shrink-0 items-center gap-1.5 rounded-full border-[3px] border-brand-orange bg-brand-orange px-2.5 py-2 text-[0.65rem] font-bold uppercase leading-tight text-white transition hover:brightness-110 min-[400px]:gap-2 min-[400px]:px-3.5 min-[400px]:text-xs sm:px-6 sm:py-3 sm:text-sm";

@@ -7,7 +7,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { TownhomesCarousel } from "@/components/townhomes-carousel";
 
-const BOOK = "https://fantasyworldresort.com/";
+import { BOOKING_BAR_HREF, HOME_HREF } from "@/lib/site-links";
 
 const amenities = [
   { img: "/img-lazy-river-start0.png", label: "Pools & Water Parks" },
@@ -82,7 +82,7 @@ export default function Home() {
 
 function Hero() {
   return (
-    <section className="relative flex min-h-[100dvh] w-full flex-col overflow-hidden bg-[#0a0a0a]">
+    <section className="relative -mt-24 flex min-h-[100dvh] w-full flex-col overflow-hidden bg-[#0a0a0a] sm:-mt-28">
       <Image
         src="/section0.png"
         alt="Family enjoying the resort water park and lazy river"
@@ -282,7 +282,7 @@ function Townhomes() {
           <div className="mt-6 flex w-full min-w-0 max-w-[31rem] flex-col gap-3 pt-2 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-start sm:gap-0">
             <div className="w-full pr-0 sm:max-w-[15rem] sm:pr-5">
               <Link
-                href={BOOK}
+                href={BOOKING_BAR_HREF}
                 className="inline-flex w-full min-w-0 max-w-[220px] items-center justify-center gap-[17px] rounded-[40px] border-[3px] border-brand-orange bg-brand-orange px-7 py-5 text-base font-bold uppercase leading-4 text-white transition hover:brightness-110"
               >
                 <span>Book Now</span>
@@ -291,7 +291,7 @@ function Townhomes() {
             </div>
             <div className="w-full sm:max-w-[15rem]">
               <Link
-                href={BOOK}
+                href={HOME_HREF}
                 className="inline-flex w-full min-w-0 max-w-[220px] items-center justify-center gap-[17px] rounded-[40px] border-[3px] border-brand-orange bg-transparent px-7 py-5 text-base font-bold uppercase leading-4 text-white transition hover:bg-white/10"
               >
                 <span>Learn More</span>
@@ -399,7 +399,7 @@ function BlogFaq() {
             </li>
           </ul>
           <Link
-            href={BOOK}
+            href={HOME_HREF}
             className="mt-5 inline-flex min-w-0 max-w-full items-center justify-center gap-[17px] rounded-[40px] border-[3px] border-brand-orange bg-brand-orange px-7 py-5 text-base font-bold uppercase leading-4 text-white transition hover:brightness-110 sm:mt-6"
             aria-label="View our blog"
           >
@@ -431,7 +431,7 @@ function BlogFaq() {
               ))}
             </div>
             <Link
-              href={BOOK}
+              href={HOME_HREF}
               className="mt-5 inline-flex min-w-0 max-w-full items-center justify-center gap-[17px] rounded-[40px] border-[3px] border-brand-orange bg-brand-orange px-7 py-5 text-base font-bold uppercase leading-4 text-white transition hover:brightness-110 sm:mt-5"
               aria-label="View all frequently asked questions"
             >
@@ -463,7 +463,7 @@ function BlogCard({ img, title, excerpt }: { img: string; title: string; excerpt
         </h3>
         <p className="m-0 text-sm font-normal leading-[21px] text-[#777]">{excerpt}</p>
         <Link
-          href={BOOK}
+          href={HOME_HREF}
           className="m-0 self-start text-base font-medium [line-height:26.4px] text-brand-teal hover:underline"
         >
           Read More »

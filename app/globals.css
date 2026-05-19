@@ -24,6 +24,18 @@ body {
   font-family: var(--font-sans);
 }
 
+@keyframes shape {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: -50%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
 /* Google Material Symbols Outlined */
 .material-symbols-outlined {
   font-family: "Material Symbols Outlined", sans-serif;

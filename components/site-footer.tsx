@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const BOOK = "https://fantasyworldresort.com/";
+import { BOOKING_BAR_HREF, HOME_HREF } from "@/lib/site-links";
 
 function EnvelopeIcon({ className }: { className?: string }) {
   return (
@@ -52,7 +52,7 @@ export function SiteFooter() {
             </div>
             <div className="flex w-full justify-center sm:shrink-0 md:w-auto lg:pl-1 lg:pr-0">
               <Link
-                href={BOOK}
+                href={BOOKING_BAR_HREF}
                 className="inline-flex w-full min-h-12 max-w-sm items-center justify-center gap-2 rounded-full border-[3px] border-brand-orange bg-brand-orange px-6 py-3.5 text-sm font-bold uppercase text-white transition hover:bg-white hover:text-brand-green sm:max-w-[14rem] sm:px-8 sm:py-4 md:max-w-[15rem] lg:max-w-[15rem] lg:px-8"
               >
                 Book Now
@@ -66,7 +66,7 @@ export function SiteFooter() {
                 <div className="relative h-[200px] w-full">
                   <Image src="/img-footer-map0.png" alt="Map" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 33vw" />
                 </div>
-                <div className="bg-[#f9fafa] p-5 text-center sm:px-6 sm:py-6">
+                <div className="bg-white p-5 text-center sm:px-6 sm:py-6">
                   <p className="m-0 text-base font-bold text-[#3f444b]">Get Driving Directions :</p>
                   <p className="mt-1 m-0 text-base leading-relaxed text-[#3f444b]">5005 Kyngs Heath Rd | Kissimmee, FL 34746</p>
                 </div>
@@ -111,7 +111,7 @@ export function SiteFooter() {
             <h3 className="m-0 w-full text-xl font-bold sm:text-2xl lg:w-auto lg:max-w-[20rem] lg:shrink-0 lg:text-right">Rewards Program :</h3>
             <div className="flex w-full min-w-0 flex-1 justify-center">
               <Link
-                href={BOOK}
+                href={HOME_HREF}
                 className="inline-flex w-full min-h-12 min-w-0 max-w-2xl items-center justify-center rounded-full bg-brand-orange px-4 py-3.5 text-center text-xs font-bold uppercase leading-tight text-white transition hover:bg-white hover:text-brand-green sm:px-6 sm:py-4 sm:text-sm lg:w-auto"
               >
                 Click Here for More Information &amp; Great Benefits
@@ -130,13 +130,13 @@ export function SiteFooter() {
             </div>
           </div>
         </div>
-        <div className="relative z-10 border-t border-white/20 px-3 py-5 sm:px-4 sm:py-7 md:py-8">
+        <div className="relative z-10 bg-white px-3 py-5 sm:px-4 sm:py-7 md:py-8">
           <div className="mx-auto flex w-full max-w-[800px] flex-col items-center justify-center gap-3 sm:gap-4 sm:flex-row sm:items-start sm:justify-end sm:gap-0 sm:px-2.5 sm:pt-1">
-            <p className="m-0 w-full min-w-0 text-center text-xs leading-4 text-white/95 sm:max-w-[32rem] sm:flex-1 sm:pr-2 sm:text-right sm:text-base">
+            <p className="m-0 w-full min-w-0 text-center text-xs leading-4 text-[#3f444b] sm:max-w-[32rem] sm:flex-1 sm:pr-2 sm:text-right sm:text-base">
               Copyright © {new Date().getFullYear()} FantasyWorld Resort. All Rights Reserved.
             </p>
             <div className="shrink-0 pl-0 sm:pl-5">
-              <Link href={BOOK} className="m-0 text-sm font-semibold text-white/95 sm:text-base">
+              <Link href={HOME_HREF} className="m-0 text-sm font-semibold text-brand-green hover:underline sm:text-base">
                 Privacy Policy
               </Link>
             </div>
